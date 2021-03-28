@@ -124,7 +124,81 @@
                 ?r9 ?r6 ?r3
             )
         )
+    )
 
+    (:action right-undo-move
+
+        :parameters (
+            ?t1 ?t2 ?t3 ?t4 ?t5 ?t6 ?t7 ?t8 ?t9
+            ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7 ?f8 ?f9
+            ?r1 ?r2 ?r3 ?r4 ?r5 ?r6 ?r7 ?r8 ?r9
+            ?b1 ?b2 ?b3 ?b4 ?b5 ?b6 ?b7 ?b8 ?b9
+            ?d1 ?d2 ?d3 ?d4 ?d5 ?d6 ?d7 ?d8 ?d9 - squareColor
+        )
+
+        :precondition (and
+            (topColor 
+                ?t1 ?t2 ?t3
+                ?t4 ?t5 ?t6
+                ?t7 ?t8 ?t9
+            )
+
+            (frontColor
+                ?f1 ?f2 ?f3
+                ?f4 ?f5 ?f6
+                ?f7 ?f8 ?f9
+            )
+
+            (rightColor
+                ?r1 ?r2 ?r3 
+                ?r4 ?r5 ?r6 
+                ?r7 ?r8 ?r9
+            )
+
+            (backColor 
+                ?b1 ?b2 ?b3 
+                ?b4 ?b5 ?b6 
+                ?b7 ?b8 ?b9
+            )
+
+            (downColor 
+                ?d1 ?d2 ?d3 
+                ?d4 ?d5 ?d6 
+                ?d7 ?d8 ?d9
+            )
+        )
+
+        :effect (and 
+            (topColor
+                ?t1 ?t2 ?b1
+                ?t4 ?t5 ?b4
+                ?t7 ?t8 ?b7
+            )
+
+            (frontColor 
+                ?f1 ?f2 ?t3
+                ?f4 ?f5 ?t6
+                ?f7 ?f8 ?t9
+            )
+
+            (backColor 
+                ?d3 ?b2 ?b3
+                ?d6 ?b5 ?b6
+                ?d9 ?b8 ?b9
+            )
+
+            (downColor 
+                ?d1 ?d2 ?f3
+                ?d4 ?d5 ?f6
+                ?d7 ?d8 ?f9
+            )
+
+            (rightColor 
+                ?r3 ?r6 ?r9
+                ?r2 ?r5 ?r8
+                ?r1 ?r4 ?r7
+            )
+        )
     )
 
 )
